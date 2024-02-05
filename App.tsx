@@ -2,25 +2,26 @@ import {
   // Text,
   View,
   StyleSheet,
-  // Platform,
+  Platform,
   // useColorScheme,
   // ScrollViewComponent,
 } from 'react-native';
-import React from 'react'; // , { useEffect }
-import SplashScreen from './navigation/screens/SplashScreen';
+import React, { useEffect } from 'react';
+import SplashScreen from 'react-native-splash-screen';
+// import SplashScreen from './navigation/screens/SplashScreen';
 
 const App = (): JSX.Element => {
-  // useEffect(() => {
-  //   if (Platform.OS === 'android') {
-  //     SplashScreen.hide();
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (Platform.OS === 'ios' || Platform.OS === 'android') {
+      SplashScreen.hide();
+    }
+  }, []);
   return (
     <View style={styles.container}>
       {/* <Text style={styles.title}>
         Missing Person Finding App by "Zahoor Ahmad"
       </Text> */}
-      <SplashScreen />
+      {/* <SplashScreen /> */}
     </View>
   );
 };
