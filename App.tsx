@@ -1,14 +1,9 @@
-import {
-  // Text,
-  View,
-  StyleSheet,
-  Platform,
-  // useColorScheme,
-  // ScrollViewComponent,
-} from 'react-native';
+import { Platform, Text, View } from 'react-native';
 import React, { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen';
-// import SplashScreen from './navigation/screens/SplashScreen';
+// import Registration from './navigation/screens/Registration';
+import AppTextInput from './components/InputComponents/AppTextInput';
+// import Registration from './navigation/screens/Registration';
 
 const App = (): JSX.Element => {
   useEffect(() => {
@@ -17,26 +12,12 @@ const App = (): JSX.Element => {
     }
   }, []);
   return (
-    <View style={styles.container}>
-      {/* <Text style={styles.title}>
-        Missing Person Finding App by "Zahoor Ahmad"
-      </Text> */}
-      {/* <SplashScreen /> */}
+    <View>
+      {/* <Registration /> */}
+      <AppTextInput placeholder="Jane Cooper" />
+      <Text>Findr</Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  // title: {
-  //   fontSize: 20,
-  //   fontWeight: 'bold',
-  //   textAlign: 'center',
-  // },
-});
 
 export default App;
