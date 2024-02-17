@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RoundedDiagram() {
+export function RoundedDiagram() {
   return (
     <svg
       width="199"
@@ -19,4 +19,11 @@ function RoundedDiagram() {
   );
 }
 
-export default RoundedDiagram;
+export function EmailIcon(){
+  return(
+    <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.8334 3.00004C17.8334 2.08337 17.0834 1.33337 16.1667 1.33337H2.83335C1.91669 1.33337 1.16669 2.08337 1.16669 3.00004M17.8334 3.00004V13C17.8334 13.9167 17.0834 14.6667 16.1667 14.6667H2.83335C1.91669 14.6667 1.16669 13.9167 1.16669 13V3.00004M17.8334 3.00004L9.50002 8.83337L1.16669 3.00004" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+  )
+}

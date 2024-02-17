@@ -1,5 +1,5 @@
-import { Platform, SafeAreaView } from 'react-native';
-import React, { useEffect } from 'react';
+import { SafeAreaView } from 'react-native';
+import React from 'react';
 import Login from './screens/Auth/Login/Login';
 
 const App = (): JSX.Element => {
