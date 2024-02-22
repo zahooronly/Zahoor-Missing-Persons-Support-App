@@ -1,5 +1,5 @@
 import React from 'react';
-import { Colors } from '../../../constants/Constants';
+import { Colors, Images } from '../../../constants/Constants';
 import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
 
 type InputComponentsProps = {
@@ -9,6 +9,14 @@ type InputComponentsProps = {
   validationText?: string;
   onChangeText: (text: string) => void;
   placeholderText: string;
+  security?: boolean;
+  keyboardType:
+    | 'default'
+    | 'number-pad'
+    | 'decimal-pad'
+    | 'numeric'
+    | 'email-address'
+    | 'phone-pad';
 };
 
 const TextInputComponent = ({
@@ -18,15 +26,14 @@ const TextInputComponent = ({
   onChangeText,
   placeholderText,
   validationText,
+  security,
+  keyboardType,
 }: InputComponentsProps) => {
   return (
     <View style={styles.container}>
       {icon && (
         <View>
-          <Image
-            source={require('../../../assets/MailIcon.png')}
-            style={styles.image}
-          />
+          <Image source={Images.MAIL_ICON} style={styles.image} />
         </View>
       )}
       <View style={styles.inputContainer}>
@@ -37,6 +44,8 @@ const TextInputComponent = ({
           onChangeText={onChangeText}
           placeholder={placeholderText}
           placeholderTextColor={Colors.FADED_SECONDARY_COLOR}
+          secureTextEntry={security}
+          keyboardType={keyboardType}
         />
         {validationText && (
           <Text style={styles.textStyle}>{validationText}</Text>
