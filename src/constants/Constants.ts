@@ -1,3 +1,8 @@
+import Logo from '../assets/svg/Logo.svg';
+import RoundedDiagram from '../assets/svg/RegistrationVector.svg';
+import GoogleImage from '../assets/svg/Google.svg';
+import LoginImage from '../assets/svg/LoginVector.svg';
+
 export const Colors = {
   PRIMARY_COLOR: '#5B59FE',
   FADED_PRIMARY_COLOR: '#BCCEFF',
@@ -5,12 +10,14 @@ export const Colors = {
   FADED_SECONDARY_COLOR: '#667085',
   WHITE_COLOR: '#FFFFFF',
   BORDER_COLOR: '#D0D5DD',
+  FADED_BORDER_COLOR: '#D0D2D7',
   FADED_TEXT_COLOR: '#667085',
 };
 
 export const Images = {
-  LOGO: require('../assets/images/Logo.png'),
-  VECTOR_ROUNDED_DIAGRAM: require('../assets/images/VectorRoundedDiagram.png'),
+  GOOGLE_IMAGE: GoogleImage,
+  LOGO: Logo,
+  VECTOR_ROUNDED_DIAGRAM: RoundedDiagram,
   MAIL_ICON: require('../assets/images/MailIcon.png'),
-  VECTOR_DIAGRAM_LOGIN: require('../assets/images/RoundedDiagramLogin.png'),
+  VECTOR_DIAGRAM_LOGIN: LoginImage,
 };

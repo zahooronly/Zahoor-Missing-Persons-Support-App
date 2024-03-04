@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button, StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet, Text, Pressable } from 'react-native';
 import { Colors } from '../../../constants/Constants';
 
 type ButtonProps = {
@@ -8,36 +8,29 @@ type ButtonProps = {
   accessibilityLabelText?: string;
 };
 
-const ButtonComponent: React.FC<ButtonProps> = ({
-  onPressLearnMore,
-  titleText,
-  accessibilityLabelText,
-}) => {
+const Button: React.FC<ButtonProps> = ({ onPressLearnMore, titleText }) => {
   return (
-    <View style={styles.buttonContainer}>
-      <Button
-        onPress={onPressLearnMore}
-        title={titleText}
-        color={Colors.PRIMARY_COLOR}
-        accessibilityLabel={accessibilityLabelText}
-      />
-    </View>
+    <Pressable onPress={onPressLearnMore} style={styles.buttonContainer}>
+      <Text style={styles.buttonText}>{titleText}</Text>
+    </Pressable>
   );
 };
 
-type Styles = {
-  buttonContainer: ViewStyle;
-};
-
-const styles = StyleSheet.create<Styles>({
+const styles = StyleSheet.create({
   buttonContainer: {
     width: 308,
     height: 'auto',
     paddingVertical: 12,
-    paddingHorizontal: 16,
+    // paddingHorizontal: 16,
     borderRadius: 8,
     backgroundColor: Colors.PRIMARY_COLOR,
   },
+  buttonText: {
+    fontSize: 23,
+    fontWeight: '600',
+    textAlign: 'center',
+    color: Colors.WHITE_COLOR,
+  },
 });
 
-export default ButtonComponent;
+export default Button;

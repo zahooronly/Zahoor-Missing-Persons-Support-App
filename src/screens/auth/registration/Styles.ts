@@ -35,14 +35,12 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    gap: 8,
     lineHeight: 20,
   },
   textContainer: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    gap: 4,
   },
   textStyle: {
     width: 308,

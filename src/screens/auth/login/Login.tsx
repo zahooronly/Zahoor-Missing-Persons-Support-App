@@ -1,67 +1,114 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react';
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { Colors, Images } from '../../../constants/Constants';
 import TextInputComponent from '../../../components/inputComponents/textInputComponent/TextInputComponent';
-import ButtonComponent from '../../../components/inputComponents/buttonComponent/ButtonComponent';
+import Button from '../../../components/inputComponents/buttonComponent/ButtonComponent';
 
 const Login = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [fullName, setFullName] = useState<string>('');
 
   const buttonPressHandler = () => {
-    console.log(email, password, fullName);
+    console.log('Login Screen', email, password);
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ backgroundColor: Colors.WHITE_COLOR }}>
       <View style={styles.logoContainer}>
-        <Image source={Images.LOGO} alt="Logo Image" style={styles.logo} />
+        <View style={styles.logo}>
+          <Images.LOGO width={167} height={96} />
+        </View>
         <Text style={styles.welcome}>Welcome Back</Text>
       </View>
       <View style={styles.container}>
-        <View style={styles.form}>
-          <View>
-            <TextInputComponent
-              icon={false}
-              name="Full Name"
-              value={fullName}
-              onChangeText={setFullName}
-              placeholderText="Jane Cooper"
-              keyboardType="default"
-            />
-            <TextInputComponent
-              icon={false}
-              name="Email"
-              value={email}
-              onChangeText={setEmail}
-              placeholderText="debra.holt@example.com"
-              validationText="Your email address is your username."
-              keyboardType="email-address"
-            />
-          </View>
+        <View style={styles.formSection}>
+          <TextInputComponent
+            icon={false}
+            name="Email"
+            value={email}
+            onChangeText={setEmail}
+            placeholderText="debra.holt@example.com"
+            validationText="Your email address is your username."
+            keyboardType="email-address"
+          />
           <TextInputComponent
             icon={false}
             name="Password"
             value={password}
             onChangeText={setPassword}
+            security={true}
             placeholderText="**************"
             validationText="Your password must be 8 character. "
             keyboardType="default"
           />
         </View>
-        <View>
-          <ButtonComponent
+      </View>
+      <View style={styles.lastLayout}>
+        <View style={{ alignItems: 'center' }}>
+          <Button
             onPressLearnMore={buttonPressHandler}
             titleText="Log in"
-            accessibilityLabelText="Register Button"
+            accessibilityLabelText="Login Button"
           />
-          <View>
-            <Text>Forget your password</Text>
-            <Text>|</Text>
-            <Text>Register for an account</Text>
+        </View>
+        <View style={styles.forgotInfo}>
+          <Text>Forget your password</Text>
+          <Text>|</Text>
+          <Text>Register for an account</Text>
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            width: 377,
+            alignItems: 'center',
+            gap: 20,
+            height: 33,
+          }}
+        >
+          <View
+            style={{
+              borderBottomColor: Colors.FADED_BORDER_COLOR,
+              borderBottomWidth: StyleSheet.hairlineWidth,
+              width: 152,
+            }}
+          />
+          <Text
+            style={{
+              fontSize: 16,
+              fontWeight: '400',
+              color: Colors.SECONDARY_COLOR,
+            }}
+          >
+            or
+          </Text>
+          <View
+            style={{
+              borderBottomColor: Colors.FADED_BORDER_COLOR,
+              borderBottomWidth: StyleSheet.hairlineWidth,
+              width: 152,
+            }}
+          />
+        </View>
+        <View
+          style={{
+            alignItems: 'center',
+          }}
+        >
+          <View
+            style={{
+              borderColor: Colors.FADED_BORDER_COLOR,
+              padding: 10,
+              borderWidth: 1,
+              borderRadius: 10,
+            }}
+          >
+            <Images.GOOGLE_IMAGE height={34} width={34} />
           </View>
-          {/* <View> </View> */}
+        </View>
+        <View style={{ alignItems: 'center' }}>
+          <Images.VECTOR_DIAGRAM_LOGIN width={158} height={155} />
         </View>
       </View>
     </SafeAreaView>
@@ -75,6 +122,7 @@ const styles = StyleSheet.create({
     width: 'auto',
     height: 96,
     alignSelf: 'center',
+    alignContent: 'center',
     marginTop: 26,
     gap: 24,
   },
@@ -104,9 +152,11 @@ const styles = StyleSheet.create({
     height: 190,
     borderColor: Colors.SECONDARY_COLOR,
     borderRadius: 8,
-    paddingHorizontal: 14,
     paddingVertical: 10,
-    top: 200,
+    alignItems: 'center',
+    alignSelf: 'center',
+    // justifyContent: 'center',
+    // top: 200,
   },
   textStyle: {
     width: 308,
@@ -117,13 +167,36 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     letterSpacing: 0,
     textAlign: 'left',
+    color: Colors.SECONDARY_COLOR,
   },
-  form: {
-    top: -130,
+  formSection: {
+    // top: -200,
     width: 308,
     height: 450,
     marginBottom: 34,
-    marginHorizontal: 33,
+    // marginHorizontal: 25,
     justifyContent: 'center',
+    // alignContent: 'center',
+  },
+  lastLayout: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    textAlign: 'center',
+    top: 170,
+    // gap: 21,
+    width: 'auto',
+    height: 227,
+    // left: 0,
+    // backgroundColor: Colors.PRIMARY_COLOR,
+  },
+  forgotInfo: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignContent: 'space-between',
+    alignSelf: 'center',
+    color: Colors.SECONDARY_COLOR,
+    gap: 10,
+    marginTop: 21,
+    textDecorationLine: 'underline',
   },
 });

@@ -1,9 +1,9 @@
-import { SafeAreaView, Text, View, Image } from 'react-native';
+import { SafeAreaView, Text, View } from 'react-native';
 import React, { useState } from 'react';
-import { Images } from '../../../constants/Constants';
+import { Colors, Images } from '../../../constants/Constants';
 import TextInputComponent from '../../../components/inputComponents/textInputComponent/TextInputComponent';
-import CheckBoxInputComponent from '../../../components/inputComponents/checkBoxInputComponent/CheckBoxInputComponent';
-import ButtonComponent from '../../../components/inputComponents/buttonComponent/ButtonComponent';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
+import Button from '../../../components/inputComponents/buttonComponent/ButtonComponent';
 import { styles } from './Styles';
 
 export default function Registration() {
@@ -19,12 +19,10 @@ export default function Registration() {
     console.log(email, password, fullName, isChecked);
   };
   return (
-    <SafeAreaView>
-      <Image
-        source={Images.VECTOR_ROUNDED_DIAGRAM}
-        alt="Image Left"
-        style={styles.imageStyles}
-      />
+    <SafeAreaView style={{ backgroundColor: Colors.WHITE_COLOR }}>
+      <View style={styles.imageStyles}>
+        <Images.VECTOR_ROUNDED_DIAGRAM width={302} height={259} />
+      </View>
       <View style={styles.container}>
         <Text style={styles.heading}>Findr</Text>
         <Text style={styles.caption}>Join the Search for Hope</Text>
@@ -60,11 +58,19 @@ export default function Registration() {
           keyboardType="default"
         />
         <View style={styles.checkboxContainer}>
-          <CheckBoxInputComponent
-            checked={isChecked}
-            size="sm"
-            state="Normal"
+          <BouncyCheckbox
+            size={20}
             onPress={handleCheckboxPress}
+            isChecked={isChecked}
+            // eslint-disable-next-line react-native/no-inline-styles
+            innerIconStyle={{
+              borderColor: Colors.SECONDARY_COLOR,
+              borderRadius: 3,
+              padding: 0,
+              backgroundColor: isChecked
+                ? Colors.SECONDARY_COLOR
+                : Colors.WHITE_COLOR,
+            }}
           />
           <View style={styles.textContainer}>
             <Text style={styles.checkboxText}>Remember me</Text>
@@ -73,7 +79,7 @@ export default function Registration() {
             </Text>
           </View>
         </View>
-        <ButtonComponent
+        <Button
           onPressLearnMore={buttonPressHandler}
           titleText="Next"
           accessibilityLabelText="Register Button"
