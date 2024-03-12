@@ -1,9 +1,9 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
-import { Colors, Images } from '../../../constants/Constants';
+import { View, Text, SafeAreaView } from 'react-native';
+import { Images } from '../../../constants/Constants';
 import TextInputComponent from '../../../components/inputComponents/textInputComponent/TextInputComponent';
 import Button from '../../../components/inputComponents/buttonComponent/ButtonComponent';
+import { styles } from './Styles';
 
 export default function Forgot() {
   return (
@@ -42,55 +42,3 @@ export default function Forgot() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  safeAreaView: {
-    backgroundColor: Colors.WHITE_COLOR,
-    height: '100%',
-  },
-  rowContainer: {
-    flexDirection: 'row',
-    gap: 16,
-    width: 210,
-    height: 28,
-    marginTop: 73,
-    marginLeft: 47.5,
-    alignItems: 'center',
-  },
-  title: {
-    color: Colors.SECONDARY_COLOR,
-    fontSize: 23,
-    fontWeight: '600',
-  },
-  imageContainer: {
-    marginTop: 56,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-  },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  centeredView: {
-    width: 308,
-    flexDirection: 'column',
-    height: 237,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 34,
-  },
-  innerContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 24,
-  },
-  descriptionText: {
-    fontSize: 16,
-    fontWeight: '400',
-    color: Colors.SECONDARY_COLOR,
-    textAlign: 'center',
-  },
-});
