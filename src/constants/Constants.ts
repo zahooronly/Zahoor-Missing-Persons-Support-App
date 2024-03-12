@@ -2,6 +2,8 @@ import Logo from '../assets/svg/Logo.svg';
 import RoundedDiagram from '../assets/svg/RegistrationVector.svg';
 import GoogleImage from '../assets/svg/Google.svg';
 import LoginImage from '../assets/svg/LoginVector.svg';
+import ThinkingVector from '../assets/svg/ThinkingVector.svg';
+import BackspaceIcon from '../assets/svg/KeyboardBackspace.svg';
 
 export const Colors = {
   PRIMARY_COLOR: '#5B59FE',
@@ -20,4 +22,6 @@ export const Images = {
   VECTOR_ROUNDED_DIAGRAM: RoundedDiagram,
   MAIL_ICON: require('../assets/images/MailIcon.png'),
   VECTOR_DIAGRAM_LOGIN: LoginImage,
+  THINKING_VECTOR: ThinkingVector,
+  BACKSPACE_ICON: BackspaceIcon,
 };
