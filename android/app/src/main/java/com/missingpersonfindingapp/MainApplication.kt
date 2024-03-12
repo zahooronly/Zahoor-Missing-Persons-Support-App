@@ -14,12 +14,6 @@ import com.facebook.soloader.SoLoader
 
 class MainApplication : Application(), ReactApplication {
 
-  override fun getPackages(): List<ReactPackage> {
-    return Arrays.asList<ReactPackage>(
-        MainReactPackage(),
-        SplashScreenReactPackage()
-    )
-}
   override val reactNativeHost: ReactNativeHost =
       object : DefaultReactNativeHost(this) {
         override fun getPackages(): List<ReactPackage> =

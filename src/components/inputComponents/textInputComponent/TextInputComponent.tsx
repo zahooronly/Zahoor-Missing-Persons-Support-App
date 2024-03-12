@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.BORDER_COLOR,
     marginBottom: 8,
+    color: Colors.SECONDARY_COLOR,
   },
   name: {
     color: Colors.SECONDARY_COLOR,

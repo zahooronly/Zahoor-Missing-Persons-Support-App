@@ -1,19 +1,13 @@
-import { Platform, SafeAreaView } from 'react-native';
-import React, { useEffect } from 'react';
-// import Login from './src/screens/auth/login/Login';
+import { SafeAreaView } from 'react-native';
+import React from 'react';
+import Login from './src/screens/auth/login/Login';
 import Registration from './src/screens/auth/registration/Registration';
-import SplashScreen from 'react-native-splash-screen';
 
-const App = (): JSX.Element => {
-  useEffect(() => {
-    if (Platform.OS === 'android') {
-      SplashScreen.hide();
-    }
-  });
+const App: React.FC = (): JSX.Element => {
   return (
     <SafeAreaView>
-      {/* <Login /> */}
-      <Registration />
+      <Login />
+      {/* <Registration /> */}
     </SafeAreaView>
   );
 };
