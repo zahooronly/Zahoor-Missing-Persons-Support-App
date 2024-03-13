@@ -9,7 +9,9 @@ export default function Forgot() {
   return (
     <SafeAreaView style={styles.safeAreaView}>
       <View style={styles.rowContainer}>
-        <Images.BACKSPACE_ICON height={24} width={24} />
+        <View>
+          <Images.BACKSPACE_ICON height={24} width={24} />
+        </View>
         <Text style={styles.title}>Forgot</Text>
       </View>
       <View style={styles.imageContainer}>
