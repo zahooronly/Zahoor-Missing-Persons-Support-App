@@ -31,13 +31,13 @@ const TextInputComponent = ({
 }: InputComponentsProps) => {
   return (
     <View style={styles.container}>
-      {icon && (
-        <View>
-          <Image source={Images.MAIL_ICON} style={styles.image} />
-        </View>
-      )}
       <View style={styles.inputContainer}>
         <Text style={styles.name}>{name}</Text>
+        {icon && (
+          <View>
+            <Image source={Images.MAIL_ICON} style={styles.image} />
+          </View>
+        )}
         <TextInput
           style={styles.input}
           value={value}
