@@ -76,7 +76,7 @@ const ReportMissing = () => {
           <View>
             {renderTextInput('Missing Person’s Full Name', '', 'default')}
             {renderTextInput('Gender', ' ', 'default')}
-            {renderTextInput('Date of Birth', ' ', 'default')}
+            {/* {renderTextInput('Date of Birth', ' ', 'default')} */}
             {renderTextInput('Nickname or know aliases', ' ', 'default')}
           </View>
         </View>
