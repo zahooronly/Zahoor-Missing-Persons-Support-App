@@ -37,6 +37,7 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.WHITE_COLOR,
     justifyContent: 'center',
     alignItems: 'center',
+    gap: 20,
   },
   inputContainer: {
     justifyContent: 'center',
